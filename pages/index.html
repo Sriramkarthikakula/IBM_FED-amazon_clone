@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="hdn-head">
+            {% if user.is_authenticated %}
+            <h2>Hello, {{user.first_name}}</h2>
+            {%else%}
+            <h2>Hello, Sign in</h2>
+            {% endif %}
+        </div>
+        <div class="hdn-content">
+            <h3>Trending</h3>
+            <ul>
+                <div>
+                    <li>Best Sellers</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>New Releases</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Movers and Shakers</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </ul>
+            <div class="line"></div>
+        </div>
+        <div class="hdn-content">
+            <h3>Digital Content And Devices
+                
+
+
+
+
+
+
+
+            </h3>
+            <ul>
+                <div>
+                    <li>Amazon miniTV- FREE entertainment</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Echo & Alexa</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Fire TV</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Kindle E-Readers & eBooks</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Audible Audiobooks</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Amazon Prime Video</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Amazon Prime Music</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </ul>
+            <div class="line"></div>
+        </div>
+        <div class="hdn-content">
+            <h3>Shop By Category
+                
+                
+                
+                </h3>
+            <ul>
+                <div>
+                    <li>Mobiles, Computers</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>TV, Appliances, Electronics</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Men's Fashion</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Women's Fashion</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </ul>
+            <div class="line"></div>
+        </div>
+        <div class="hdn-content">
+            <h3>Programs & Features
+                
+                
+                
+                </h3>
+            <ul>
+                <div>
+                    <li>Gift Cards & Mobile Recharges</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Amazon Launchpad</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Flight Tickets</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Clearance store</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </ul>
+            <div class="line"></div>
+        </div>
+        <div class="hdn-content">
+            <h3>Help & Settings
+                
+                
+                </h3>
+            <ul>
+                <div>
+                    <li>Your Account</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    <li>Customer Service</li><i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div>
+                    {% if user.is_authenticated %}
+                    <a href="accounts/logout"><li>Log out</li><i class="fa-solid fa-chevron-right"></i></a>
+                    {%else%}
+                    <li>Sign in</li><i class="fa-solid fa-chevron-right"></i>
+                    {% endif %}
+                    
+                </div>
+            </ul>
+            
+        </div>
+    </div>
+    <i class="fa-solid fa-xmark into"></i>
+    <div class="triangle"></div>
+    <div class="hdn-sign">
+        <div class="hdn-table">
+            <div>
+                <h3>
+                    Your Lists
+                </h3>
+                <ul>
+                    <li>Create a Wish List</li>
+                    <li>Wish from Any Website</li>
+                    <li>Baby Wishlist</li>
+                    <li>Discover Your Style</li>
+                    <li>Explore Showroom</li>
+                </ul>
+            </div>
+            <div class="hdn-line">
+
+            </div>
+            <div>
+                <h3>Your account</h3>
+                <ul>
+                    <li>Account</li>
+                    <li>Orders</li>
+                    <li>recommendations</li>
+                    <li>Browsing History</li>
+                    <li>Watchlist</li>
+                    <li>Video Purchases</li>
+                    <li>recommendations</li>
+                    <li>Browsing History</li>
+                    <li>Watchlist</li>
+                    <li>Video Purchases</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="backdark"></div>
+    <header id="main">
+        <div class="first">
+            <div class="flex logo">
+            <a href="#"><img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon image"></a>
+            <div class="map flex">
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                <div>
+                    <span style="font-size: 13px;">Hello <br><b>Select Your Address</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="flex input">
+            <div>
+                <span>All</span>
+                <i class="fa-sharp fa-solid fa-caret-down"></i>
+            </div>
+            <div>
+                <input type="text" placeholder="Search Amazon.in">
+                <i class="fa-solid fa-magnifying-glass search"></i>
+            </div>
+        </div>
+        <div class="flex right">
+            <div class="flex lang">
+                <img src="{% static 'images/india.png' %}" alt="" style="width: 30px;height:30px">
+                <i class="fa-sharp fa-solid fa-caret-down"></i>
+            </div>
+            <div class="sign">
+                {% if user.is_authenticated %}
+                <span>Hello, {{user.first_name}}</span>
+                {%else%}
+                <span>Hello, Signin</span>
+                {% endif %}
+                
+                <div class="flex ac">
+                    <span>Account & Lists</span>
+                    <i class="fa-sharp fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="flex sign" style="cursor: pointer;">
+                <span>Returns <br>& Orders</span>
+                <i class="fa-sharp fa-solid fa-caret-down"></i>
+            </div>
+            <div class="flex cart">
+                <i class="fa-solid fa-cart-shopping" style="font-size: 30px;"></i>
+                <span class="ca" style="font-weight: bold;">Cart</span>
+                <p>0</p>
+            </div>
+        </div>
+        </div>
+        <div class="second">
+            <div class="second-1">
+                <div>
+                    <i class="fa-solid fa-bars"></i>
+                    <span>All</span>
+                </div>
+            </div>
+            <div class="seconc-2">
+                <ul>
+                    <li>Amazon miniTV</li>
+                    <li>Sell</li>
+                    <li>Best Sellers</li>
+                    <li>Today's Deals</li>
+                    <li>Mobiles</li>
+                    <li>Customer Service</li>
+                    <li>New Releases</li>
+                    <li>Prime</li>
+                    <li>Electronics</li>
+                    <li>Home & Kitchen</li>
+                    <li>Amazon Pay</li>   
+                </ul>
+            </div>
+            <div class="second-3">
+                <span><img src="https://m.media-amazon.com/images/G/31/img17/Home/AmazonTV/Ravina/Desktop/SWM_400x39_Hip-Hop-India_V3._CB600341694_.jpg" alt=""> </span>
+            </div>
+        </div>
+    </header>
+    <section class="sec-1">
+        <div class="container">
+            <div class="container-1">
+                <div class="product-comp">
+                    <div class="box">
+                        
+                        <h3>Up to 60% off | Styles for men</h3>
+                        <div class="box-a">
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg" alt="" style="margin-right:25px;">
+                                <span>Clothing</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-2-186-116._SY116_CB636110853_.jpg" alt="">
+                                <span>Footwear</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-3-186-116._SY116_CB636110853_.jpg" alt="" style="margin-right:25px;">
+                                <span>Watches</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-4-186-116._SY116_CB636110853_.jpg" alt="">
+                                <span>Bags & luggage</span>
+                            </div>
+                        </div>
+                        <a href="#" style="margin-left: 20px;">See more</a>
+                    </div>
+                    <div class="box box-c">
+                        
+                        <h3>Up to 70% off | Clearance store</h3>
+                            <div >
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Electronics/Clearance/Clearance_store_Desktop_CC_1x._SY304_CB628315133_.jpg" alt="" style="margin-left:30px;">
+                                <a href="#" style="margin-left: 20px;"> See more</a>
+                            </div> 
+                        
+                    </div>
+                    
+                    <div class="box">
+                        
+                        <h3>Automotive essentials | Up to 60% off</h3>
+                        <div class="box-a">
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Glasscare1X._SY116_CB410830553_.jpg" alt="" style="margin-right:25px;">
+                                <span>Cleaning accessories</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Rim_tyrecare1x._SY116_CB410830552_.jpg" alt="">
+                                <span>Tyre & rim care</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vega_helmet_186x116._SY116_CB405090404_.jpg" alt="" style="margin-right:25px;">
+                                <span>Helmets</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vaccum1x._SY116_CB410830552_.jpg" alt="">
+                                <span>Vacuum cleaner</span>
+                            </div>
+                        </div>
+                        <a href="#" style="margin-left: 20px;">See more</a>
+                    </div>
+                    <div class="box-b">
+                        <div class="best">
+                            {% if user.is_authenticated %}
+                            <h3>Enjoy your best experience</h3>
+                            <a href="/"><button>Signed in Securely</button></a>
+                            {%else%}
+                            <h3>Sign in for your best experience</h3>
+                            <a href="accounts/signin"><button>Sign in Securely</button></a>
+                            {% endif %}
+                            
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg" alt="">
+                        </div>
+                            
+                    </div>
+                </div>
+                <div class="product-comp" style="margin-left: 8px;">
+                    <div class="box box-c">
+                        
+                        <h3>Up to 70% off | Clearance store</h3>
+                            <div>
+                                <img src="https://m.media-amazon.com/images/I/61KNJav3S9L._AC_UL600_FMwebp_QL65_.jpg" alt="" style="margin-left:30px;">
+                                <a href="#" style="margin-left: 20px;"> See more</a>
+                            </div> 
+                        
+                    </div>
+                    <div class="box">
+                        
+                        <h3>Offers on travel tickets</h3>
+                        <div class="box-a">
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/AmazonPay/PD23/QC/Flight_186x116._SY116_CB600937888_.jpg" alt="" style="margin-right:25px;">
+                                <span>
+                                    flight tickets</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/AmazonPay/PD23/QC/Train_186x116._SY116_CB600937888_.jpg" alt="">
+                                <span>Zero gateway fees</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/AmazonPay/PD23/QC/Bus_186x116._SY116_CB600937888_.jpg" alt="" style="margin-right:25px;">
+                                <span>Bus ticket</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/AmazonPay/PD23/QC/SW_186x116._SY116_CB600937888_.jpg" alt="">
+                                <span>travel needs</span>
+                            </div>
+                        </div>
+                        <a href="#" style="margin-left: 20px;">See more</a>
+                    </div>
+                    <div class="box">
+                        
+                        <h3>Appliances for your home | Up to 55% off</h3>
+                        <div class="box-a">
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg" alt="" style="margin-right:25px;">
+                                <span>Air conditioners</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg" alt="">
+                                <span>Refrigerators</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg" alt="" style="margin-right:25px;">
+                                <span>Microwaves</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg" alt="">
+                                <span>Washing machine</span>
+                            </div>
+                        </div>
+                        <a href="#" style="margin-left: 20px;">See more</a>
+                    </div>
+                    <div class="box">
+                        
+                        <h3>Up to 60% off | Professional tools, testing & more</h3>
+                        <div class="box-a">
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Biss/2018/QC/Tools1x._SY116_CB424026090_.jpg" alt="" style="margin-right:25px;">
+                                <span>
+                                   
+                                    Professional tools</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Biss/2021/BAU_GW_Graphics/PCQC/2._SY116_CB643952439_.jpg" alt="">
+                                <span>Measuring instruments</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Biss/2021/BAU_GW_Graphics/PCQC/1._SY116_CB643952439_.jpg" alt="" style="margin-right:25px;">
+                                <span>Cleanign supplies</span>
+                            </div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Biss/2018/QC/med1x._SY116_CB424026091_.jpg" alt="">
+                                <span>Medical supplies</span>
+                            </div>
+                        </div>
+                        <a href="#" style="margin-left: 20px;">See more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider" style="position: absolute;z-index:-1">
+                <div class="image-box">
+                    <div class="slide">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/WLA/Launches23/Realme/Wireless3/Sale_PD/Post1PM/PC_Hero_3000x1200._CB601112573_.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Softlines_JWL_SH_GW_Assets/July_23/MFD/Unrec/Shoes/3000_shoes._CB601250574_.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/vendorcentral/supporthub/trainingCourses/learningPaths/5300-Kitchen---Water-bottles--Lunch-box--hero-v2-3000-x-1200-_Under_1._CB601243436_.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Beauty/GW/MFD/MFD-July-hero-PC._CB600958410_.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Shreyansh/BAU/Unrexc/D70978891_INWLD_BAU_Unrec_Uber_PC_Hero_3000x1200._CB594707876_.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Softlines_JWL_SH_GW_Assets/July_23/MFD/Unrec/Jewelry/3000._CB601232246_.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <section class="sec-2">
+        <div class="slide-sec">
+            <div class="l-btn"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="r-btn"><i class="fa-solid fa-chevron-right"></i></div>
+            <h2 style="margin-bottom: 20px;">Today’s Deals </h2>
+            <ul class="product-slide">
+                <li><img src="https://m.media-amazon.com/images/I/41xnfQ6+TCL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41bLD50sZSL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81TBkVDGeGL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41uGjvXbeBL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81VQYbV0-wL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51kdwtY1KvL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/31Ri-FAMBUL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/31i8GB3mD2L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41dA113N-LL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41sx753+kXL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41pyFK774YL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/516WPi2+IYL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41gMugnZ6lL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/31hXqtvutdL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51ZUZyzrT9L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41B1qN1qfAL._AC_SY200_.jpg" alt=""></li>
+                
+            </ul>
+        </div>
+    </section>
+    <section class="sec-2">
+        <div class="slide-sec">
+            <div class="l-btn btn-lb"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="r-btn btn-la"><i class="fa-solid fa-chevron-right"></i></div>
+            <h2 style="margin-bottom: 20px;">Up to 45% off | Furnitures from stores nearby</h2>
+            <ul class="product-slide product-slide-1">
+                <li><img src="https://m.media-amazon.com/images/I/71NU2uOL4XL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/419sjsYXXaL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71s8Nrlh-fS._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61g5HR1fkPL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41vN+X7oaIL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81RzcJRbA5L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51sYRvmbAAL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71DIrzPzwfL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51HkB-qVdAL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71kODifHzAL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61VgIm1rFTL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61iCaM11GrL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71ht1jReY0L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/91c5Zd6zuWL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/912Vxfc+WjL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81q6MP2G7oL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61gqJwAOhhL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71sVDHxrMYL._AC_SY200_.jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    <section class="sec-2">
+        <div class="slide-sec">
+            <div class="l-btn btn-lb1"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="r-btn btn-la1"><i class="fa-solid fa-chevron-right"></i></div>
+            <h2 style="margin-bottom: 20px;">Up to 45% off | Wireless electronics make life easy</h2>
+            <ul class="product-slide product-slide-2">
+                <li><img src="https://m.media-amazon.com/images/I/31jSfjq9GJL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51pQeFfwiCL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71eFDoRqVvL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51SwNn7xWAL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61KtXVslwDL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/31a8OFFrgtL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51JcK+UvhQL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41Kq+jWDUYL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/31ObzpB9RML._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41-DGGm544L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41t7Wa+kxPL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/715b-vqjZPL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51exXg1WfwL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41te0QSxqpL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/418euKE3GbL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51ff6jb0YaL._AC_SY200_.jpg" alt=""></li>
+                
+            </ul>
+        </div>
+    </section>
+    <div class="product-comp" style="margin-left: 8px;">
+        <div class="box box-c">
+            
+            <h3>50% off on selling fee*</h3>
+           
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/malar/March23/LR_379X304._SY304_CB595115209_.jpg" alt="" style="margin-left:30px;">
+                    <a href="#" style="margin-left: 20px;"> See more</a>
+                </div> 
+            
+        </div>
+        <div class="box">
+            
+            <h3>Minimum 50% off | Top styles for her</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/kids/WRS_Dec22/PC_QC/WA/1_1X._SY116_CB618751254_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Allen Solly, Fort Collins
+                        </span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/kids/WRS_Dec22/PC_QC/WA/2_1X._SY116_CB618751254_.jpg" alt="">
+                    <span>Biba, Aurelia</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/kids/WRS_Dec22/PC_QC/WA/4_1X._SY116_CB618751254_.jpg" alt="" style="margin-right:25px;">
+                    <span>Womanista, Mimosa</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/kids/WRS_Dec22/PC_QC/WA/3_1X._SY116_CB618751254_.jpg" alt="">
+                    <span>Harpa, Only & more</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+        <div class="box">
+            
+            <h3>Electronics devices for home office</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc0.5x_5._SY116_CB655805757_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Smartwatches, trackers
+                        
+                        
+                        </span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc0.5x_6._SY116_CB655805757_.jpg" alt="">
+                    <span>Tablets</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc0.5x_7._SY116_CB655805757_.jpg" alt="" style="margin-right:25px;">
+                    <span>Laptops</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc0.5x_8._SY116_CB655805757_.jpg" alt="">
+                    <span>Monitors</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+        <div class="box">
+            
+            <h3>Bestsellers in Women's Indian Clothing</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg" alt="" style="margin-right:25px;">
+                    <span>Air conditioners</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg" alt="">
+                    <span>Refrigerators</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg" alt="" style="margin-right:25px;">
+                    <span>Microwaves</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg" alt="">
+                    <span>Washing machine</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+    </div>
+    <section class="sec-2">
+        <div class="slide-sec">
+            <div class="l-btn btn-lb2"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="r-btn btn-la2"><i class="fa-solid fa-chevron-right"></i></div>
+            <h2 style="margin-bottom: 20px;">Up to 50% off on beauty products, this festive season</h2>
+            <ul class="product-slide product-slide-3">
+                <li><img src="https://m.media-amazon.com/images/I/616IRFFJ6-L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61cLCkOtCNL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61lNnOSZl-L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61fHWeWaieL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61acPpIHP4L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51XWU-vZcKL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/716-umww9qL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51l3XlqP0cL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61QQEyqO2-L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51cQZEDEcLL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/615ElwKTQIL._AC_SY200_.jpg" alt=""></li>
+                
+            </ul>
+        </div>
+    </section>
+    <section class="sec-2">
+        <div class="slide-sec">
+            <div class="l-btn btn-lb3"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="r-btn btn-la3"><i class="fa-solid fa-chevron-right"></i></div>
+            <h2 style="margin-bottom: 20px;">Related to items you've viewed</h2>
+            <ul class="product-slide product-slide-4">
+                <li><img src="https://m.media-amazon.com/images/I/81RzcJRbA5L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61tsQWmjE+L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71TsbD9OScL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71vNR8BvR3L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71FqnBJbzfS._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81rBTtiPVRS._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81FZtPjRcyS._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81mLl-v0VVL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71SvaLt7JsL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/512mpqbbcXL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/41XynESDsDL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61vjJBI-ewL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/81tA+yaV+GL._AC_SY200_.jpg" alt=""></li>
+                
+                <li><img src="https://m.media-amazon.com/images/I/61nQw0ywwuL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61uTQSDyaZL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61wUEBD7o5L._AC_SY200_.jpg" alt=""></li>
+                
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="add_img">
+                <img src="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg" alt="">
+                <p class="sponsor">Sponsored<b id="ad-feedback-sprite-desktop-ad-center-1" style="display: inline-block; vertical-align: text-bottom; margin: 1px 0px; width: 14px; height: 12px; background: url(&quot;https://m.media-amazon.com/images/G/01/ad-feedback/info_icon_1Xsprite.png&quot;) 0px 0px no-repeat scroll transparent;"></b></p>
+        </div>
+    </section>
+    <div class="product-comp" style="margin-left: 8px;">
+        <div class="box">
+            
+            <h3>Under ₹499 | Pocket-friendly fashion</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-1-186-116._SY116_CB636055991_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                       
+                        Clothing
+                       
+                       
+                        </span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-3-186-116._SY116_CB636055991_.jpg" alt="">
+                    <span>Backpacks</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-2-186-116._SY116_CB636055991_.jpg" alt="" style="margin-right:25px;">
+                    <span>Footwear</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-4-186-116._SY116_CB636055991_.jpg" alt="">
+                    <span>View all</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+        <div class="box">
+            
+            <h3>Revamp your home in style</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_1_Low._SY116_CB670263840_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Bedsheets, curtains & more</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_2_Low._SY116_CB670263840_.jpg" alt="">
+                    <span>Home decoration</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_3_Low._SY116_CB670263840_.jpg" alt="" style="margin-right:25px;">
+                    <span>Home storage</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_4_Low._SY116_CB670263840_.jpg" alt="">
+                    <span>Lighting solutions</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+        <div class="box box-c">
+            
+            <h3>Hip Hop India | Watch Now Only on miniTV</h3>
+           
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Home/AmazonTV/HipHopIndia/Desktop_CC/GOVO_updated/DeskCC-379x304_Hip-Hop-India_V2-nora._SY304_CB600434490_.jpg" alt="" style="margin-left:30px;">
+                    <a href="#" style="margin-left: 20px;">
+                        Watch for FREE | miniTV</a>
+                </div> 
+            
+        </div>
+        <div class="box">
+            
+            <h3>Birthday store</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_1QC2_1x._SY116_CB662999955_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Gift for men</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_2QC2_1x._SY116_CB662999955_.jpg" alt="">
+                    <span>Gift for women</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_3QC2_1x._SY116_CB662999955_.jpg" alt="" style="margin-right:25px;">
+                    <span>Gift for boys</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_4QC2_1x._SY116_CB662999955_.jpg" alt="">
+                    <span>Gift for girls</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+    </div>
+    <section class="sec-2">
+        <div class="slide-sec">
+            <div class="l-btn btn-lb3"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="r-btn btn-la3"><i class="fa-solid fa-chevron-right"></i></div>
+            <h2 style="margin-bottom: 20px;">Up to 55% off | Getting clear skin is not impossible </h2>
+            <ul class="product-slide product-slide-4">
+                <li><img src="https://m.media-amazon.com/images/I/71CWj2FksWL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/9171KBwW+YL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/712z2r46EtL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/610HHXZAV3L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51YjbgkMO7L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71FHep6O1QL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71-OJ4Dg3CL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71r2Dee68BS._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61Wf5NHdbVL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71H3ym27WEL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61Ohkh0QNdL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71VnC+SetHL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/7162aaG7VZL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51HBtBrp9aL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61nlcASrsWL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/71LC4CypMIL._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/51b0TD-sR7L._AC_SY200_.jpg" alt=""></li>
+                <li><img src="https://m.media-amazon.com/images/I/61o8N6hfUlL._AC_SY200_.jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    <div class="product-comp" style="margin-left: 8px;">
+        <div class="box box-c">
+            
+            <h3>Hip Hop India | Watch Now Only on miniTV</h3>
+           
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/AudibleIN/Amazon_Marvel_379x304_under50kb._SY304_CB602679911_.jpg" alt="" style="margin-left:30px;">
+                    <a href="#" style="margin-left: 20px;">
+                        See more</a>
+                </div> 
+            
+        </div>
+        <div class="box">
+            
+            <h3>Up to 40% off | Baby care</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Baby/cnnjpp1/diapers_wipes_1._SY116_CB613220557_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Diapers & wipes
+                        
+                        
+                        </span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Baby/cnnjpp1/Skin_care_1._SY116_CB613220557_.jpg" alt="">
+                    <span>Bath & skincare</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Baby/cnnjpp1/feeding_suppliess_1._SY116_CB613220557_.jpg" alt="" style="margin-right:25px;">
+                    <span>Feeding supplies</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Baby/cnnjpp1/View_all_baby_ess_1._SY116_CB613220557_.jpg" alt="">
+                    <span>View all baby essentials</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+        <div class="box">
+            
+            <h3>Birthday store</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_1QC2_1x._SY116_CB662999955_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Gift for men
+                        
+                        </span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_2QC2_1x._SY116_CB662999955_.jpg" alt="">
+                    <span>Gift for women</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_3QC2_1x._SY116_CB662999955_.jpg" alt="" style="margin-right:25px;">
+                    <span>Gift for boys</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_4QC2_1x._SY116_CB662999955_.jpg" alt="">
+                    <span>Gift for girls</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+        <div class="box">
+            
+            <h3>Essentials for Expecting Mothers</h3>
+            <div class="box-a">
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCQC/Pregnancy_Supplements._SY116_CB667651395_.jpg" alt="" style="margin-right:25px;">
+                    <span>
+                        Pregnancy supplements
+                        
+                        </span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCQC/Maternity_Sleep__Loungewear._SY116_CB667651395_.jpg" alt="">
+                    <span> Maternity Sleep</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCQC/Maternity_pillows._SY116_CB667651395_.jpg" alt="" style="margin-right:25px;">
+                    <span>Maternity pillows</span>
+                </div>
+                <div>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCQC/Maternity_Skin_care._SY116_CB667651395_.jpg" alt="">
+                    <span>Maternity Skin care</span>
+                </div>
+            </div>
+            <a href="#" style="margin-left: 20px;">See more</a>
+        </div>
+    </div>
+    
+    <section style="background-color: white;">
+    <hr style="width: 95%;margin:auto;"><br><br><br>
+    
+        <div class="sign">
+                    {% if user.is_authenticated %}
+                    <a href="accounts/logout"><button>Sign Out</button></a><br><br>
+                    {%else%}
+                    <p style="margin: auto;">See personalized recommendations</p>
+                    <a href="accounts/signin"><button>Sign in</button></a>
+                    <p class="new">New customer? <span> <a href="accounts/register">Start here.</a></span></p><br><br>
+                    {% endif %}
+        </div>
+        <hr><br><br>
+    </section>
+    <section class="footer">
+        <div class="backtop">
+            <span><a href="#main" style="color: white;">Back to Top</a></span>
+        </div>
+        <div class="detail"><br><br><br>
+            <div class="table">
+                <div>
+                    <div class="t-head">Get to know us</div>
+                    <ul>
+                        <li>Careers</li>
+                        <li>Blog</li>
+                        <li>About Amazon</li>
+                        <li>Investors Relations</li>
+                        <li>Amazon Advises</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+           
+                <div>
+                    <div class="t-head">Get to know us</div>
+                    <ul>
+                        <li>Careers</li>
+                        <li>Blog</li>
+                        <li>About Amazon</li>
+                        <li>Investors Relations</li>
+                        <li>Amazon Advises</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <div class="t-head">Get to know us</div>
+                    <ul>
+                        <li>Careers</li>
+                        <li>Blog</li>
+                        <li>About Amazon</li>
+                        <li>Investors Relations</li>
+                        <li>Amazon Advises</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <div class="t-head">Get to know us</div>
+                    <ul>
+                        <li>Careers</li>
+                        <li>Blog</li>
+                        <li>About Amazon</li>
+                        <li>Investors Relations</li>
+                        <li>Amazon Advises</li>
+                        <li>Amazon Science</li>
+                    </ul>
+            </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="copy">
+            <span>&copy; Designed by Karthik</span>
+        </div>
+    </section>
+    <script src="{% static 'js/index.js' %}">
+
+    </script>
+</body>
+</html>
