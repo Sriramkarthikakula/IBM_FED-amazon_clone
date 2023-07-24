@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container text-center" style="margin-top: 10px;">
+        <div class="row">
+            <div class="col">
+                <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-HD.png" alt="" style="width: 10%;height:100%;">
+            </div>  
+        </div>
+    </div><br>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div style="width:27%;height:670px;border:0.01px solid #DBDFEA;border-radius:5px;margin:auto;padding-left:20px;padding-right:20px;">
+                        <p style="margin-top:15px;font-size:30px;">Create Account</p>
+                        <form action="reg" method="post">
+                        {% csrf_token %}
+                        <label for="user">Your name</b></label>
+                        <input type="text" size="35" placeholder="First and Last name" name="first_name"><br><br>
+                        <label for="user">Mobile number</label>
+                        <input type="text" size="35" placeholder="Mobile Number" name="username"><br><br>
+                        <label for="user">Email (optional)</label>
+                        <input type="text" size="35" placeholder="Email" name="email"><br><br>
+                        <label for="user">Password</label>
+                        <input type="text" size="35" placeholder="Password" name="password"><br>
+                        <p style="font-size: 10px;"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords must be at least 6 characters.</p>
+                        <p style="font-size: 13px;">To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
+                        <button type="submit" style="background-color: #ffd814;border:none;padding:5px 120px;border-radius:10px;">Continue</button><br><br>
+                        </form>
+                        <div>
+                            <hr width="60%" style="margin: auto;">
+                        </div><br>
+                        <p style="font-size: 12px;">Already have an account? <a href="signin"><span style="color:rgb(91, 91, 255);">Sign in <i class="fa-solid fa-caret-right"></i></span></a></p>
+                        <p style="font-size: 12px;">Buying for work?  <span style="color:rgb(91, 91, 255);">Create a free business account <i class="fa-solid fa-caret-right"></i></span></p>
+                        <p style="font-size: 12px;">By creating an account or logging in, you agree to<br> Amazon’s <span style="color:rgb(91, 91, 255);">Conditions of Use and Privacy Policy. <i class="fa-solid fa-caret-right"></i></span></p>
+                    </div>
+                    
+                   
+                    <hr>
+                    <div class="text-center">
+                        <p style="color: rgb(91, 91, 255);font-size:13px;"> Conditions of Use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Help </p>
+                    </div>
+                    <div class="text-center">
+                        <p style="font-size: 13px;">© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>
